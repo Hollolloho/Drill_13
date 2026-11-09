@@ -48,7 +48,10 @@ class Boy:
         self.frame = 0
 
     def fire_ball(self):
-        ball = Ball(self.x, self.y, self.face_dir * 10)
+        if self.selected_item == 0:
+            return
+        image_name = {1: 'ball21x21.png', 2: 'ball41x41.png'}[self.selected_item]
+        ball = Ball(self.x, self.y, self.face_dir * 10, image_name)
         game_world.add_oject(ball)
 
     def handle_event(self, event):
