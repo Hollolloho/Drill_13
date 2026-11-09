@@ -35,7 +35,8 @@ def handle_events():
                 return
             if event.key in (SDLK_0, SDLK_1, SDLK_2):
                 play_mode.boy.selected_item = event.key - SDLK_0
-                continue
+                game_framework.pop_mode(resume_previous=False)
+                return
         play_mode.boy.handle_event(event)
 
 
@@ -45,7 +46,7 @@ def update():
 
 def render():
     play_mode.draw_world()
-    image.draw(660, 490)
+    image.draw(get_canvas_width() / 2, get_canvas_height() / 2)
     update_canvas()
 
 
