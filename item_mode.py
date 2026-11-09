@@ -47,3 +47,11 @@ def render():
     play_mode.draw_world()
     image.draw(660, 490)
     update_canvas()
+
+
+def pause():
+    play_mode.pause()
+
+
+def resume():
+    play_mode.resume()
