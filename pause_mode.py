@@ -1,6 +1,5 @@
 from pico2d import *
 import game_framework
-import play_mode
 
 
 def init():
@@ -26,4 +25,4 @@ def update():
 
 
 def render():
-    play_mode.render()
+    game_framework.stack[-2].render()
