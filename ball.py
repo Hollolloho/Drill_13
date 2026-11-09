@@ -4,8 +4,12 @@ import game_world
 
 
 class Ball:
+    images = {}
+
     def __init__(self, x, y, velocity, image_name='ball21x21.png'):
-        self.image = load_image(image_name)
+        if image_name not in Ball.images:
+            Ball.images[image_name] = load_image(image_name)
+        self.image = Ball.images[image_name]
         self.x, self.y = x, y
         self.velocity = velocity
 
